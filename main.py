@@ -59,10 +59,11 @@ if __name__ == '__main__':
     url = 'https://attack.mitre.org/tactics/enterprise/'
     # u = 'https://attack.mitre.org/techniques/T1591/'
     # write_csv(spider(u))
-
     for tu in get_taurl(url):
         for s in get_techurl(main_url + tu):
+            print('start:%s' %(s))
             write_csv(spider(main_url + s))
+            print('stop:%s' %(s))
 
     # url_list = [
     #     "https://attack.mitre.org/techniques/T1591/"
